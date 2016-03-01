@@ -46,11 +46,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                 else
                 {
-                    let celsius:Double = Double (celsiusValue.text!)!
+                    let celsius:Float = Float (celsiusValue.text!)!
                     
-                    let fah:Double = (9*celsius + 160)/5
+                    let fah:Float = (9*celsius + 160)/5
+                    let y = NSString(format: "%.01f", fah)
                     
-                    theResultLabel.text = " \(fah) fahrenheit"
+                    theResultLabel.text = " \(y) fahrenheit"
                 }
                 
             }
@@ -58,8 +59,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 else if segmentSelector.selectedSegmentIndex == 1
                 {
                     theResultLabel.text = ""
-                    let fahrenheit:Double = Double (celsiusValue.text!)!
-                    let celsius1:Double = (fahrenheit-32)*5/9
+                    let fahrenheit:Float = Float (celsiusValue.text!)!
+                    let celsius1:Float = (fahrenheit-32)*5/9
             
                 theResultLabel.text = "\(celsius1) celsius"
                 
