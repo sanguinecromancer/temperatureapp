@@ -9,48 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
-    
-    
+  
     @IBOutlet weak var segmentSelector: UISegmentedControl!
-    
-    
-    
-    
     @IBOutlet weak var celsiusValue: UITextField!
-    
     @IBOutlet weak var theResultLabel: UILabel!
-    
-    
-    
     @IBAction func changeLabel(sender: AnyObject)
     {
     theResultLabel.text = ""
         celsiusValue.text = ""
     }
-        
-        
+
             @IBAction func calculate(sender: AnyObject)
             {
-                
-                celsiusValue.resignFirstResponder()
-                
+             celsiusValue.resignFirstResponder()
                 if segmentSelector.selectedSegmentIndex == 0
             {
                 if celsiusValue.text == ""
                     
                 {
                     theResultLabel.text = "enter value please"
-                    
                 }
-                    
+             
                 else
                 {
                     let celsius:Float = Float (celsiusValue.text!)!
-                    
                     let fah:Float = (9*celsius + 160)/5
                     let y = NSString(format: "%.01f", fah)
-                    
                     theResultLabel.text = " \(y) fahrenheit"
                 }
                 
@@ -61,9 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     theResultLabel.text = ""
                     let fahrenheit:Float = Float (celsiusValue.text!)!
                     let celsius1:Float = (fahrenheit-32)*5/9
-            
-                theResultLabel.text = "\(celsius1) celsius"
-                
+                    theResultLabel.text = "\(celsius1) celsius"
                 }
                 
         }
